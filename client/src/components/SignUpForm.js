@@ -21,7 +21,6 @@ function SignUpForm({ onLogin }) {
       body: JSON.stringify({
         username,
         password,
-        password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -46,7 +45,7 @@ function SignUpForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">Safeword</Label>
         <Input
           type="password"
           id="password"
@@ -55,19 +54,11 @@ function SignUpForm({ onLogin }) {
           autoComplete="current-password"
         />
       </FormField>
+      <br/>
       <FormField>
-        <Label htmlFor="password">Password Confirmation</Label>
-        <Input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-      </FormField>
-      
-      <FormField>
-        <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
+        <Button type="submit">
+          {isLoading ? "Loading🍔 🍔 🍔" : "Sign Up  🍌"}
+        </Button>
       </FormField>
       <FormField>
         {errors.map((err) => (

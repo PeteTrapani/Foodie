@@ -39,7 +39,7 @@ function LoginForm({ onLogin }) {
         />
       </FormField>
       <FormField>
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">Safeword</Label>
         <Input
           type="password"
           id="password"
@@ -48,6 +48,7 @@ function LoginForm({ onLogin }) {
           onChange={(e) => setPassword(e.target.value)}
         />
       </FormField>
+      <br/>
       <FormField>
         <Button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading🍔 🍔 🍔" : "Login 🍔"}

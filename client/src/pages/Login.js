@@ -10,27 +10,27 @@ function Login({ onLogin }) {
   return (
     <Wrapper>
       <Logo>
-        <strong>🍌foodFinder🍌</strong>
+        <strong>🍌DomiTummy🍌</strong>
       </Logo>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
-          <Divider />
+          <br />
+
           <p>
             Don't have an account? &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(false)}>
-              Sign Up
+              Sign Up 🍌
             </Button>
           </p>
         </>
       ) : (
         <>
           <SignUpForm onLogin={onLogin} />
-          <Divider />
           <p>
             Already have an account? &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(true)}>
-              Log In
+              Log In 🍔
             </Button>
           </p>
         </>
