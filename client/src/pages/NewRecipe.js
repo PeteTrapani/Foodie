@@ -5,19 +5,12 @@ import ReactMarkdown from "react-markdown";
 import { Button, Error, FormField, Input, Label, Textarea } from "../styles";
 
 function NewRecipe({ user }) {
-  const [title, setTitle] = useState("My Awesome Recipe");
-  const [minutesToComplete, setMinutesToComplete] = useState("30");
-  const [instructions, setInstructions] = useState(`Here's how you make it.
+  const [title, setTitle] = useState("Enter Recipe");
+  const [instructions, setInstructions] = useState(
   
-## Ingredients
 
-- 1c Sugar
-- 1c Spice
 
-## Instructions
-
-**Mix** sugar and spice. _Bake_ for 30 minutes.
-  `);
+  );
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
@@ -33,7 +26,6 @@ function NewRecipe({ user }) {
       body: JSON.stringify({
         title,
         instructions,
-        minutes_to_complete: minutesToComplete,
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -57,15 +49,7 @@ function NewRecipe({ user }) {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="minutesToComplete">Minutes to complete</Label>
-            <Input
-              type="number"
-              id="minutesToComplete"
-              value={minutesToComplete}
-              onChange={(e) => setMinutesToComplete(e.target.value)}
+              required
             />
           </FormField>
           <FormField>
@@ -75,6 +59,7 @@ function NewRecipe({ user }) {
               rows="10"
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
+              required
             />
           </FormField>
           <FormField>
@@ -88,15 +73,6 @@ function NewRecipe({ user }) {
             ))}
           </FormField>
         </form>
-      </WrapperChild>
-      <WrapperChild>
-        <h1>{title}</h1>
-        <p>
-          <em>Time to Complete: {minutesToComplete} minutes</em>
-          &nbsp;·&nbsp;
-          <cite>By {user.username}</cite>
-        </p>
-        <ReactMarkdown>{instructions}</ReactMarkdown>
       </WrapperChild>
     </Wrapper>
   );

@@ -15,7 +15,7 @@ function NavBar({ user, setUser }) {
   return (
     <Wrapper>
       <Logo>
-        <Link to="/">Reciplease</Link>
+        <Link to="/">🍌foodFinder🍌</Link>
       </Logo>
       <Nav>
         <Button as={Link} to="/new">
@@ -29,7 +29,7 @@ function NavBar({ user, setUser }) {
   );
 }
 
-const Wrapper = styled.header`
+const Wrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,9 +37,7 @@ const Wrapper = styled.header`
 `;
 
 const Logo = styled.h1`
-  font-family: "Permanent Marker", cursive;
   font-size: 3rem;
-  color: deeppink;
   margin: 0;
   line-height: 1;
 
@@ -50,10 +48,11 @@ const Logo = styled.h1`
 `;
 
 const Nav = styled.nav`
-  display: flex;
+  display: grid;
   gap: 4px;
   position: absolute;
-  right: 8px;
+  right: 80px;
+  margin-top: 1200px;
 `;
 
 export default NavBar;

@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.permit(:title, :instructions, :genre, :time_of_day, :image)
+    params.permit(:title, :instructions)
   end
 
 end

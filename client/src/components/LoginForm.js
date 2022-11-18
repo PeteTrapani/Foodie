@@ -50,7 +50,7 @@ function LoginForm({ onLogin }) {
       </FormField>
       <FormField>
         <Button variant="fill" color="primary" type="submit">
-          {isLoading ? "Loading..." : "Login"}
+          {isLoading ? "Loading🍔 🍔 🍔" : "Login 🍔"}
         </Button>
       </FormField>
       <FormField>

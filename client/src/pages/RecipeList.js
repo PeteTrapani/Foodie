@@ -21,9 +21,7 @@ function RecipeList() {
             <Box>
               <h2>{recipe.title}</h2>
               <p>
-                <em>Time to Complete: {recipe.minutesToComplete} minutes</em>
-                &nbsp;·&nbsp;
-                <cite>By {recipe.user.username}</cite>
+                <p> <strong>{recipe.user.username}</strong></p>
               </p>
               <ReactMarkdown>{recipe.instructions}</ReactMarkdown>
             </Box>
@@ -42,12 +40,14 @@ function RecipeList() {
 }
 
 const Wrapper = styled.section`
-  max-width: 800px;
-  margin: 40px auto;
+  max-width: 40%;
 `;
 
 const Recipe = styled.article`
-  margin-bottom: 24px;
+margin-top: 20px;  
+margin-bottom: 24px;
+margin-left: 20px;
+background-color: orange;
 `;
 
 export default RecipeList;
